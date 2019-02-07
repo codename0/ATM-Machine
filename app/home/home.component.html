@@ -1,0 +1,48 @@
+﻿<div class="container m
+b-5 mt-5">
+    <p>Form status: {{ withdrawalForm.value | json }}</p>
+    <p>Form status: {{ withdrawalForm.status | json }}</p>
+    <h1 >Ranbanka Bank ATM Application</h1>
+    <hr />
+    <h4>Hello {{currentUser.firstName}} Your balance is :{{balance}}</h4>
+
+<form [formGroup]="withdrawalForm">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text form-control">₹</span>
+        </div>
+        <input type="number" class="form-control" placeholder="amount" formControlName="amount" required>
+    </div>
+    <div class="container">
+        <button class="btn btn-danger mr-4" type="reset"> Clear</button>
+        <button class="btn btn-primary ml-5" type="submit" [disabled] = "!withdrawalForm.valid" (click)="withdraw()"> Withdraw </button>
+    </div>
+</form>
+
+</div>
+
+
+
+
+
+<div class="container mt-5 mb-5">
+    <h2>ATM MACHINE NOTES DISPENSER COUNTER</h2>
+    <table class="table table-striped table-bordered">
+        <thead class="bg-primary">
+        <tr>
+            <th>2000 Note</th>
+            <th>500 Note</th>
+            <th>100 Note</th>
+            <th>Take Cash</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{twoThousandNotesDispansed}}</td>
+            <td>{{fiveHundredNotesDispansed}}</td>
+            <td>{{oneHundredNotesDispansed}}</td>
+            <td><div *ngIf="twoThousandNotesDispansed != null "><button  class="btn btn-outline-success " (click)="resetCounter()">Collect Cash</button></div></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

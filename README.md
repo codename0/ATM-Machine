@@ -10,3 +10,5 @@ ATM Machine mimic Application developed using angular.
 ```sh
 localhost:3000
 ```
+![alt text](https://github.com/codename0/ATM-Machine/blob/master/Application-Screenshot.PNG)
+
